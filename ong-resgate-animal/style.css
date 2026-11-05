@@ -1,0 +1,879 @@
+
+/* ==================================================
+   PROJETO PATAS SEGURAS
+   Folha de estilos compartilhada pelas quatro páginas.
+   ================================================== */
+
+/* Aplica um modelo de caixa previsível a todos os elementos. */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --blue-900: #123451;
+    --blue-800: #174a70;
+    --blue-700: #21658f;
+    --blue-600: #287db1;
+    --blue-100: #e7f2f9;
+    --blue-050: #f4f9fc;
+
+    --gray-900: #263746;
+    --gray-700: #526474;
+    --gray-500: #8292a0;
+    --gray-300: #d6e0e7;
+    --gray-200: #e8eef2;
+
+    --white: #ffffff;
+
+    --shadow: 0 12px 32px rgba(18, 52, 81, 0.09);
+}
+
+/* Configurações gerais do documento. */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--white);
+    color: var(--gray-900);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Impede que imagens ultrapassem o espaço disponível. */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilo dos links. */
+a {
+    color: var(--blue-700);
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: var(--blue-900);
+}
+
+/* Foco visível para navegação por teclado. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #f0b429;
+    outline-offset: 3px;
+}
+
+/* Estilo padrão dos títulos e parágrafos. */
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+h1, h2, h3 {
+    color: var(--blue-900);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.1rem, 5vw, 3.8rem);
+    letter-spacing: -0.04em;
+    margin-bottom: 1.2rem;
+}
+
+h2 {
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.55rem;
+}
+
+/* Mantém o conteúdo alinhado e centralizado. */
+.container {
+    width: min(1120px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+/* ==================================================
+   CABEÇALHO E MENU
+   ================================================== */
+
+.site-header {
+    position: relative;
+    z-index: 2;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 82px;
+    padding-block: 12px;
+}
+
+/* Nome e símbolo da ONG. */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--blue-900);
+    font-size: 1rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.brand-icon {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* Links do menu. */
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.main-nav a {
+    padding: 9px 13px;
+    border-radius: 9px;
+    color: var(--gray-700);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+    background: var(--blue-100);
+    color: var(--blue-900);
+}
+
+/* ==================================================
+   BOTÕES
+   ================================================== */
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.button {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.button-primary {
+    background: var(--blue-700);
+    color: var(--white);
+}
+
+.button-primary:hover {
+    background: var(--blue-900);
+    color: var(--white);
+}
+
+.button-secondary {
+    border-color: var(--gray-300);
+    background: var(--white);
+    color: var(--blue-900);
+}
+
+.button-secondary:hover {
+    background: var(--blue-050);
+    color: var(--blue-900);
+}
+
+.button-full {
+    width: 100%;
+}
+
+/* ==================================================
+   BANNER PRINCIPAL
+   ================================================== */
+
+.hero-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 570px;
+    overflow: hidden;
+    background-color: var(--blue-900);
+}
+
+/* A imagem ocupa toda a área do banner. */
+.banner-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Camada azul semitransparente sobre a fotografia. */
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(18, 52, 81, 0.95) 0%,
+        rgba(18, 52, 81, 0.78) 45%,
+        rgba(18, 52, 81, 0.20) 100%
+    );
+}
+
+/* Conteúdo que fica por cima da imagem. */
+.banner-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: var(--white);
+}
+
+.banner-content h1 {
+    max-width: 760px;
+    color: var(--white);
+    font-size: clamp(2.3rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+}
+
+.banner-text {
+    max-width: 650px;
+    color: #f0f5f9;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.banner-content .eyebrow {
+    color: #b9e2ff;
+}
+
+.banner-content .button-row {
+    margin-top: 30px;
+}
+
+/* ==================================================
+   SEÇÕES E DESTAQUES
+   ================================================== */
+
+.section {
+    padding: 76px 0;
+}
+
+.section-soft {
+    background: var(--blue-050);
+}
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 36px;
+    text-align: center;
+}
+
+.section-heading > p:last-child {
+    color: var(--gray-700);
+}
+
+/* Flexbox organiza os três cartões lado a lado. */
+.feature-grid {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.feature-card {
+    flex: 1 1 0;
+    padding: 28px;
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 6px 20px rgba(18, 52, 81, 0.04);
+}
+
+.feature-card p,
+.value-card p {
+    margin-bottom: 0;
+    color: var(--gray-700);
+}
+
+.feature-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--blue-100);
+    color: var(--blue-800);
+    font-size: 1.65rem;
+}
+
+/* ==================================================
+   INTERAÇÃO: FORMAS DE AJUDAR
+   ================================================== */
+
+.participation-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 38px;
+    border-radius: 20px;
+    background: var(--blue-100);
+}
+
+.participation-panel > div:first-child {
+    max-width: 720px;
+}
+
+.participation-panel p {
+    color: var(--gray-700);
+}
+
+.participation-mark {
+    flex: 0 0 auto;
+    color: var(--blue-700);
+    font-size: clamp(3rem, 8vw, 6rem);
+}
+
+.toggle-details {
+    margin: 18px 0;
+    padding: 16px;
+    border-left: 4px solid var(--blue-600);
+    border-radius: 0 10px 10px 0;
+    background: var(--white);
+}
+
+.toggle-details p {
+    margin: 0;
+}
+
+/* ==================================================
+   TÍTULOS INTERNOS DAS PÁGINAS
+   ================================================== */
+
+.page-banner {
+    padding: 58px 0;
+    background: var(--blue-050);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.page-banner h1 {
+    max-width: 850px;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+}
+
+.page-banner p:last-child {
+    max-width: 720px;
+    margin-bottom: 0;
+    color: var(--gray-700);
+    font-size: 1.05rem;
+}
+
+.eyebrow {
+    margin-bottom: 12px;
+    color: var(--blue-700);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+/* ==================================================
+   PÁGINA SOBRE
+   ================================================== */
+
+.about-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+}
+
+.about-copy {
+    flex: 1 1 58%;
+}
+
+.about-copy h2:not(:first-child) {
+    margin-top: 32px;
+}
+
+.about-visual {
+    flex: 1 1 42%;
+    min-width: 0;
+}
+
+.about-visual img {
+    width: 100%;
+    aspect-ratio: 4 / 4;
+    border-radius: 18px;
+    background: var(--blue-100);
+    object-fit: cover;
+}
+
+.image-caption,
+.small-note {
+    color: var(--gray-700);
+    font-size: 0.88rem;
+}
+
+.image-caption {
+    margin-top: 10px;
+}
+
+/* Cartões de objetivos da ONG. */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.value-card {
+    padding: 24px;
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    background: var(--white);
+}
+
+.center-action {
+    margin-top: 34px;
+    text-align: center;
+}
+
+/* ==================================================
+   PÁGINA PROJETOS
+   Lista vertical: um projeto abaixo do outro.
+   ================================================== */
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.project-item {
+    display: flex;
+    align-items: stretch;
+    gap: 28px;
+    padding: 24px;
+    border: 1px solid var(--gray-200);
+    border-radius: 18px;
+    background: var(--white);
+    box-shadow: 0 8px 24px rgba(18, 52, 81, 0.05);
+}
+
+.project-image {
+    flex: 0 0 34%;
+    min-width: 0;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    max-height: 290px;
+    border-radius: 12px;
+    background: var(--blue-100);
+    object-fit: cover;
+}
+
+.project-content {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.project-content h2 {
+    margin-bottom: 12px;
+    font-size: 1.55rem;
+}
+
+.project-number {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--blue-700);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.contribution {
+    margin-bottom: 0;
+    padding: 13px 15px;
+    border-radius: 10px;
+    background: var(--blue-050);
+    color: var(--gray-700);
+}
+
+/* ==================================================
+   PÁGINA CONTATO E FORMULÁRIO
+   ================================================== */
+
+.contact-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 42px;
+}
+
+.contact-copy {
+    flex: 1 1 45%;
+}
+
+.form-card {
+    flex: 1 1 55%;
+    min-width: 0;
+    padding: 30px;
+    border: 1px solid var(--gray-200);
+    border-radius: 18px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.check-list {
+    padding-left: 22px;
+}
+
+.check-list li {
+    margin-bottom: 10px;
+}
+
+.notice {
+    margin-top: 28px;
+    padding: 18px;
+    border-left: 4px solid var(--blue-600);
+    border-radius: 0 10px 10px 0;
+    background: var(--blue-050);
+}
+
+.notice p {
+    margin: 6px 0 0;
+    color: var(--gray-700);
+}
+
+/* Organiza cada campo do formulário em coluna. */
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 17px;
+}
+
+.form-field label {
+    color: var(--blue-900);
+    font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 13px;
+    border: 1px solid #b9c8d3;
+    border-radius: 9px;
+    background: var(--white);
+    color: var(--gray-900);
+    font: inherit;
+}
+
+.form-field textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--blue-600);
+}
+
+/* Mensagens de erro e sucesso produzidas pelo JavaScript. */
+.form-feedback {
+    margin: 16px 0 0;
+    padding: 0;
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+.form-feedback.error {
+    padding: 12px;
+    background: #fff0f0;
+    color: #9b1c1c;
+}
+
+.form-feedback.success {
+    padding: 12px;
+    background: #eaf7ef;
+    color: #17643a;
+}
+
+.small-note {
+    margin: 14px 0 0;
+}
+
+/* ==================================================
+   RODAPÉ
+   ================================================== */
+
+.site-footer {
+    padding: 26px 0;
+    background: var(--blue-900);
+    color: #eaf2f8;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.footer-inner p {
+    margin: 0;
+}
+
+.footer-inner a {
+    color: var(--white);
+    font-weight: 700;
+}
+
+/* ==================================================
+   RESPONSIVIDADE PARA TABLETS E TELAS MENORES
+   ================================================== */
+
+@media (max-width: 800px) {
+
+    /* O menu passa para uma nova linha. */
+    .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+        width: 100%;
+        gap: 3px;
+    }
+
+    .main-nav a {
+        padding: 8px 10px;
+    }
+
+    /* Reduz o banner em telas menores. */
+    .hero-banner {
+        min-height: 500px;
+    }
+
+    .banner-content {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .banner-overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(18, 52, 81, 0.93),
+            rgba(18, 52, 81, 0.65)
+        );
+    }
+
+    /* Coloca conteúdo e imagem um abaixo do outro. */
+    .about-grid,
+    .contact-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-visual,
+    .contact-copy,
+    .form-card {
+        width: 100%;
+    }
+
+    /* Os cartões da página inicial ficam empilhados. */
+    .feature-grid {
+        flex-direction: column;
+    }
+
+    .participation-panel {
+        align-items: flex-start;
+        padding: 26px;
+    }
+
+    .project-item {
+        gap: 20px;
+    }
+
+    .project-image {
+        flex-basis: 36%;
+    }
+
+    .project-image img {
+        min-height: 180px;
+    }
+}
+
+/* ==================================================
+   RESPONSIVIDADE PARA CELULARES
+   Exemplo de largura de referência: 390 px.
+   ================================================== */
+
+@media (max-width: 560px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    .brand {
+        white-space: normal;
+    }
+
+    /* Menu em duas colunas para caber na tela. */
+    .main-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .main-nav a {
+        text-align: center;
+    }
+
+    /* Ajustes do banner no celular. */
+    .hero-banner {
+        min-height: 520px;
+    }
+
+    .banner-content {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .banner-content h1 {
+        font-size: 2.35rem;
+    }
+
+    .banner-text {
+        font-size: 1rem;
+    }
+
+    .banner-overlay {
+        background: rgba(18, 52, 81, 0.78);
+    }
+
+    .banner-content .button-row {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .banner-content .button {
+        width: 100%;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .feature-card {
+        padding: 22px;
+    }
+
+    .participation-panel {
+        flex-direction: column;
+    }
+
+    .participation-mark {
+        align-self: flex-end;
+        font-size: 3.5rem;
+    }
+
+    .page-banner {
+        padding: 42px 0;
+    }
+
+    /* Os cartões de objetivos ficam em uma única coluna. */
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Cada projeto fica abaixo do anterior, com a imagem no topo. */
+    .project-item {
+        flex-direction: column;
+        gap: 18px;
+        padding: 16px;
+    }
+
+    .project-image {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .project-image img {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        aspect-ratio: 16 / 9;
+    }
+
+    .form-card {
+        padding: 20px;
+    }
+
+    .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* Respeita a preferência do usuário por movimento reduzido. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

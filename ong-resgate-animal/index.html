@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Codificação de caracteres para aceitar acentos. -->
+    <meta charset="UTF-8">
+
+    <!-- Adapta a página à largura do celular ou computador. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Conheça o Projeto Patas Seguras, uma ONG fictícia dedicada ao resgate e à proteção animal.">
+
+    <title>Início | Projeto Patas Seguras</title>
+
+    <!-- CSS externo compartilhado pelo site inteiro. -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript externo. defer espera o HTML ser interpretado. -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO E MENU -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a class="brand" href="index.html">
+                <img
+    src="img/logo.jpg"
+    alt="Logo da ONG"
+    class="brand-icon"
+>
+                <span>Projeto <strong>Patas Seguras</strong></span>
+            </a>
+
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="index.html" aria-current="page">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="projetos.html">Projetos</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- BANNER PRINCIPAL -->
+        <section class="hero-banner">
+
+            <!-- IMAGEM DO BANNER: -->
+            <img
+                class="banner-image"
+                src="img/hero-animais.jpg"
+                alt="Cães e gatos resgatados que representam a proteção animal"
+            >
+
+            <!-- Camada azul transparente para melhorar a leitura. -->
+            <div class="banner-overlay"></div>
+
+            <!-- Texto e botões posicionados sobre o banner. -->
+            <div class="container banner-content">
+
+                <p class="eyebrow">Resgate • Cuidado • Recomeço</p>
+
+                <h1>Todo animal merece uma segunda chance.</h1>
+
+                <p class="banner-text">
+                    O Projeto Patas Seguras é uma ONG fictícia criada
+                    para representar iniciativas de resgate, acolhimento
+                    e proteção de animais em situação de risco.
+                </p>
+
+                <div class="button-row">
+                    <a class="button button-primary" href="projetos.html">
+                        Conheça os projetos
+                    </a>
+
+                    <a class="button button-secondary" href="contato.html">
+                        Quero participar
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DESTAQUES DA ONG -->
+        <section class="section section-soft">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Nosso compromisso</p>
+                    <h2>Proteção que começa com empatia</h2>
+                    <p>
+                        Três pilares que orientam as ações apresentadas
+                        neste projeto acadêmico.
+                    </p>
+                </div>
+
+                <!-- Cartões organizados com Flexbox no CSS. -->
+                <div class="feature-grid">
+
+                    <article class="feature-card">
+                        <span class="feature-icon" aria-hidden="true">♡</span>
+                        <h3>Resgate responsável</h3>
+                        <p>
+                            Acolher animais em risco e encaminhá-los
+                            para atendimento e proteção adequados.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <span class="feature-icon" aria-hidden="true">✚</span>
+                        <h3>Saúde e bem-estar</h3>
+                        <p>
+                            Promover cuidados veterinários, alimentação,
+                            segurança e recuperação.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <span class="feature-icon" aria-hidden="true">⌂</span>
+                        <h3>Um novo lar</h3>
+                        <p>
+                            Incentivar a adoção responsável e o vínculo
+                            entre animais e famílias.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERAÇÃO JAVASCRIPT ADICIONAL -->
+        <section class="section">
+            <div class="container participation-panel">
+
+                <div>
+                    <p class="eyebrow">Faça parte da mudança</p>
+                    <h2>Pequenas atitudes salvam vidas.</h2>
+
+                    <p>
+                        Você pode contribuir com tempo, divulgação,
+                        doações ou adoção responsável.
+                    </p>
+
+                    <!-- O JavaScript mostra ou oculta este conteúdo. -->
+                    <div id="participation-details" class="toggle-details" hidden>
+                        <p>
+                            <strong>Como ajudar:</strong>
+                            divulgue animais para adoção, doe ração
+                            ou materiais, ofereça apoio como voluntário
+                            e incentive a identificação e a castração
+                            responsável.
+                        </p>
+                    </div>
+
+                    <button
+                        class="button button-primary"
+                        id="toggle-details"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="participation-details"
+                    >
+                        Ver formas de ajudar
+                    </button>
+                </div>
+
+                <div class="participation-mark" aria-hidden="true">🐾</div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© 2026 Projeto Patas Seguras — projeto acadêmico fictício.</p>
+            <a href="contato.html">Entre em contato</a>
+        </div>
+    </footer>
+
+</body>
+</html>

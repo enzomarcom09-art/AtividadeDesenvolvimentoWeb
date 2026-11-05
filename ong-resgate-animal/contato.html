@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com o Projeto Patas Seguras.">
+    <title>Contato | Projeto Patas Seguras</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-icon" aria-hidden="true">🐾</span>
+                <span>Projeto <strong>Patas Seguras</strong></span>
+            </a>
+
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="projetos.html">Projetos</a>
+                <a href="contato.html" aria-current="page">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-banner">
+            <div class="container">
+                <p class="eyebrow">Vamos conversar</p>
+                <h1>Junte-se à rede de proteção animal.</h1>
+                <p>
+                    Preencha o formulário demonstrativo ou conheça
+                    maneiras de participar.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container contact-grid">
+
+                <!-- INFORMAÇÕES SOBRE PARTICIPAÇÃO -->
+                <div class="contact-copy">
+
+                    <h2>Como participar</h2>
+
+                    <p>
+                        Você pode contribuir divulgando animais para adoção,
+                        oferecendo tempo como voluntário, apoiando campanhas
+                        de arrecadação ou compartilhando informações sobre
+                        guarda responsável.
+                    </p>
+
+                    <ul class="check-list">
+                        <li>Voluntariado em ações e campanhas.</li>
+                        <li>Doação de ração e materiais previamente combinados.</li>
+                        <li>Divulgação de animais e iniciativas educativas.</li>
+                        <li>Adoção responsável, após avaliar as necessidades do animal.</li>
+                    </ul>
+
+                    <div class="notice">
+                        <strong>Aviso importante:</strong>
+                        <p>
+                            Este é um projeto acadêmico sem backend.
+                            O formulário apenas simula a validação no navegador.
+                            Nenhum e-mail será enviado e os dados não serão
+                            coletados ou armazenados.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- FORMULÁRIO -->
+                <div class="form-card">
+
+                    <h2>Envie uma mensagem</h2>
+
+                    <!-- novalidate permite mostrar as mensagens personalizadas do JS. -->
+                    <form id="contact-form" novalidate>
+
+                        <div class="form-field">
+                            <label for="nome">Nome completo</label>
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Exemplo Nome"
+                                autocomplete="name"
+                                minlength="3"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-field">
+                            <label for="email">E-mail</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Exemplo@gmail.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-field">
+                            <label for="estado">Estado</label>
+                            <select id="estado" name="estado" required>
+                                <option value="">Selecione seu estado</option>
+                                <option value="AC">Acre (AC)</option>
+                                <option value="AL">Alagoas (AL)</option>
+                                <option value="AP">Amapá (AP)</option>
+                                <option value="AM">Amazonas (AM)</option>
+                                <option value="BA">Bahia (BA)</option>
+                                <option value="CE">Ceará (CE)</option>
+                                <option value="DF">Distrito Federal (DF)</option>
+                                <option value="ES">Espírito Santo (ES)</option>
+                                <option value="GO">Goiás (GO)</option>
+                                <option value="MA">Maranhão (MA)</option>
+                                <option value="MT">Mato Grosso (MT)</option>
+                                <option value="MS">Mato Grosso do Sul (MS)</option>
+                                <option value="MG">Minas Gerais (MG)</option>
+                                <option value="PA">Pará (PA)</option>
+                                <option value="PB">Paraíba (PB)</option>
+                                <option value="PR">Paraná (PR)</option>
+                                <option value="PE">Pernambuco (PE)</option>
+                                <option value="PI">Piauí (PI)</option>
+                                <option value="RJ">Rio de Janeiro (RJ)</option>
+                                <option value="RN">Rio Grande do Norte (RN)</option>
+                                <option value="RS">Rio Grande do Sul (RS)</option>
+                                <option value="RO">Rondônia (RO)</option>
+                                <option value="RR">Roraima (RR)</option>
+                                <option value="SC">Santa Catarina (SC)</option>
+                                <option value="SP">São Paulo (SP)</option>
+                                <option value="SE">Sergipe (SE)</option>
+                                <option value="TO">Tocantins (TO)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="assunto">Assunto</label>
+                            <select id="assunto" name="assunto" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="Voluntariado">Voluntariado</option>
+                                <option value="Doação">Doação</option>
+                                <option value="Adoção">Adoção</option>
+                                <option value="Informações">Informações gerais</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea
+                                id="mensagem"
+                                name="mensagem"
+                                rows="5"
+                                minlength="10"
+                                placeholder="Escreva sua mensagem (mínimo de 10 caracteres)"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button
+                            class="button button-primary button-full"
+                            type="submit"
+                        >
+                            Validar mensagem
+                        </button>
+
+                        <!-- aria-live anuncia a resposta a leitores de tela. -->
+                        <p
+                            id="form-feedback"
+                            class="form-feedback"
+                            role="status"
+                            aria-live="polite"
+                        ></p>
+
+                    </form>
+
+                    <p class="small-note">
+                        Demonstração acadêmica: não informe dados pessoais reais.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© 2026 Projeto Patas Seguras — projeto acadêmico fictício.</p>
+            <a href="index.html">Voltar ao início</a>
+        </div>
+    </footer>
+
+</body>
+</html>
